@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+ol,
+dl,
+dt,
+dd,
+hr,
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: inherit;
+  font-weight: normal;
+  font-family: inherit;
+  color: inherit;
+  line-height: normal;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+img {
+  vertical-align: middle;
+}
+
+input,
+textarea {
+  outline: none;
+  border: 0;
+}
+
+em,
+i {
+  font-style: normal;
+}
+
+strong,
+b {
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+button:hover {
+  cursor: pointer;
+}
+button:active,
+button:focus {
+  border: 0;
+  outline: 0;
+}
+body {
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+del {
+  text-decoration: none;
+}
+
+
+w3m-wallet-guide {
+  display: none;
+}
+
+w3m-modal {
+  --wui-spacing-xs: 16px;
+  --wui-color-modal-bg: #1a1a1a;
+}

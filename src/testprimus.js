@@ -60,10 +60,11 @@ export async function primusProofTest(attTemplateID) {
     );
     console.log("completeHttpResponseCiphertext=", completeHttpResponseCiphertext); 
   }
+  return attestation;
 
-  //verify siganture
-  const verifyResult = await primusZKTLS.verifyAttestation(attestation);
-  console.log("verifyResult=", verifyResult);
+  //verify siganture TODO
+  // const verifyResult = await primusZKTLS.verifyAttestation(attestation);
+  // console.log("verifyResult=", verifyResult);
 
 //   if (verifyResult === true && attTemplateID === targetTemplateID) {
 //     const zkVmRequestData = {

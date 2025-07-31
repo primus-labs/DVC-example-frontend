@@ -1,0 +1,125 @@
+#root {
+  .iconfont {
+    line-height: 1;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+}
+// common
+:root {
+  --bg-primary: rgba(28, 28, 28, 0.7);
+  --bg-content: #161616;
+  --bg-text: rgba(255, 255, 255, 0.05);
+  --bg-text-hover: rgba(255, 255, 255, 0.12);
+  --bg-text-phone: rgba(255, 255, 255, 0.08);
+  --outline-primary: rgba(255, 255, 255, 0.1);
+  --outline-active: rgba(255, 255, 255, 0.4);
+  --text-primary: rgba(255, 255, 255, 1);
+  --text-sec: rgba(255, 255, 255, 0.7);
+  --text-tertiary: rgba(255, 255, 255, 0.45);
+  --text-default: rgba(113, 113, 122, 1);
+  --button-default: rgba(255, 255, 255, 0.7);
+  --line-defaule: rgba(255, 255, 255, 0.15);
+  --Green: rgba(1, 225, 123, 1);
+
+  --text-tertiary: rgba(255, 255, 255, 0.45);
+  --Primus-Linea: linear-gradient(225deg, #ff8a00 14.89%, #fd4c00 85.85%);
+}
+// mobile
+:root {
+  --pHeader-height: 64px;
+  --pFooter-height: 56px;
+  --pHeader-width: 335px;
+  --radius-sec: 16px;
+  --radius-main: 28px;
+  --spacing-4: 4px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-14: 14px;
+  --spacing-16: 16px;
+  --spacing-18: 18px;
+  --spacing-20: 20px;
+  --spacing-22: 22px;
+  --spacing-23: 23px;
+  --spacing-24: 24px;
+  --spacing-28: 28px;
+  --spacing-30: 30px;
+  --spacing-32: 32px;
+  --spacing-36: 36px;
+  --spacing-40: 40px;
+  --spacing-60: 60px;
+
+  --long-app: 335px;
+
+  --pContent-width: 1120px;
+
+  --long-main-bg: 420px;
+  --long-main-text: 364px;
+  --long-sec-bg: 532px;
+  --long-sec-text: 476px;
+
+  --pageContent-height: calc(
+    100vh - var(--pHeader-height) - var(--pFooter-height) -
+      env(safe-area-inset-bottom)
+  );
+}
+@media (min-width: 768px) {
+  :root {
+    --pContent-width: 1120px;
+    --pHeader-height: 80px;
+    --pHeader-width: 1326px;
+    --radius-main: 28px;
+    --long-main-bg: 420px;
+    --long-main-text: 364px;
+    --long-sec-bg: 532px;
+    --long-sec-text: 476px;
+    --radius-sec: 16px;
+    --spacing-4: 4px;
+    --spacing-6: 6px;
+    --spacing-8: 8px;
+    --spacing-10: 10px;
+    --spacing-12: 12px;
+    --spacing-14: 14px;
+    --spacing-16: 16px;
+    --spacing-18: 18px;
+    --spacing-20: 20px;
+    --spacing-22: 22px;
+    --spacing-23: 23px;
+    --spacing-24: 24px;
+    --spacing-28: 28px;
+    --spacing-30: 30px;
+    --spacing-32: 32px;
+    --spacing-36: 36px;
+    --spacing-40: 40px;
+    --spacing-60: 60px;
+
+    border-radius: var(--Radii-radius-input, 6px);
+    --bg-primary: rgba(28, 28, 28, 0.7);
+    --bg-content: #161616;
+    --bg-text: rgba(255, 255, 255, 0.05);
+    --bg-text-hover: rgba(255, 255, 255, 0.12);
+    --outline-primary: rgba(255, 255, 255, 0.1);
+    --outline-active: rgba(255, 255, 255, 0.4);
+    --text-primary: rgba(255, 255, 255, 1);
+    --text-sec: rgba(255, 255, 255, 0.7);
+    --text-tertiary: rgba(255, 255, 255, 0.45);
+    --text-default: rgba(113, 113, 122, 1);
+    --button-default: rgba(255, 255, 255, 0.7);
+    --line-defaule: rgba(255, 255, 255, 0.15);
+    --Green: rgba(1, 225, 123, 1);
+
+    --text-tertiary: rgba(255, 255, 255, 0.45);
+    --Primus-Linea: linear-gradient(225deg, #ff8a00 14.89%, #fd4c00 85.85%);
+  }
+
+  #root {
+    .pContent {
+      width: var(--pContent-width);
+    }
+  }
+  w3m-modal {
+    --wui-spacing-xs: 16px;
+  }
+}

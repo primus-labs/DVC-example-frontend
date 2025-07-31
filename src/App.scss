@@ -1,0 +1,46 @@
+@import "@styles/flex";
+#root {
+  @include frcs;
+  .app {
+    // padding: 100px 0 ;
+    padding-top: 100px;
+    @include frsc;
+    .appContent {
+      width: 1100px;
+      @include fcss;
+      gap: 32px;
+      .appContentHeader {
+        @include fcss;
+        gap: 12px;
+        > h1 {
+          color: #161616;
+          font-family: Inter;
+          font-size: 48px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 140%; /* 67.2px */
+        }
+      }
+      .operationBlock {
+        width: 100%;
+        @include fcss;
+        gap: 12px;
+        .operationList {
+          width: 100%;
+          @include fcss;
+          gap: 16px;
+        }
+      }
+      .resultBlock {
+        width: 100%;
+        @include fcss;
+        gap: 12px;
+      }
+      .pAlert{
+        position: fixed;
+        bottom: 80px;
+        right: 120px;
+      }
+    }
+  }
+}

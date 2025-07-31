@@ -1,0 +1,16 @@
+@import "@styles/flex";
+.pMask {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  // opacity: 0.75;
+  // background: rgba(28, 28, 28, 0.75);
+
+  width: 100%;
+  height: 100%;
+  @include frcc;
+
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2.5px);
+}

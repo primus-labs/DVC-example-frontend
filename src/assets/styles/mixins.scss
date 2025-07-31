@@ -1,0 +1,327 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin pSpiner(
+  $width: 12px,
+  $height: 12px,
+  $borderWidth: 1px,
+  $borderColor: rgba(161, 161, 170, 0.8),
+  $borderTopColor: transparent,
+  $time: 1s
+) {
+  width: $width;
+  height: $height;
+  border-radius: 50%;
+  border: $borderWidth solid $borderColor;
+  border-top: $borderWidth solid $borderTopColor;
+  animation: spin $time linear infinite;
+}
+
+@mixin textBaseSemibold {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+@mixin textXsMedium {
+  /* text-xs/medium */
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 133.333% */
+  @media (min-width: 768px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@mixin text3xlMedium {
+  /* text-3xl/medium */
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px; /* 120% */
+  @media (min-width: 768px) {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+@mixin textSmMedium {
+  /* text-sm/medium */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  @media (min-width: 768px) {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+@mixin textBaseRegular {
+  /* text-base/regular */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+@mixin textXsRegular {
+  /* text-xs/regular */
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+  @media (min-width: 768px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+@mixin textSmRegular {
+  /* text-sm/regular */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  @media (min-width: 768px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+@mixin textBaseMedium {
+  /* text-base/medium */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+@mixin textSmMedium {
+  /* text-sm/medium */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  @media (min-width: 768px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@mixin textXlMedium {
+  // * text-xl/medium */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 140% */
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+@mixin textXsMedium {
+  /* text-xs/medium */
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 133.333% */
+  @media (min-width: 768px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+@mixin textLgMedium {
+  /* text-lg/medium */
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 155.556% */
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@mixin textBaseSemibold {
+  /* text-base/semibold */
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+@mixin textSmSemibold {
+  /* text-sm/semibold */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 142.857% */
+  @media (min-width: 768px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+@mixin textLgSemibold {
+  /* text-lg/semibold */
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 155.556% */
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@mixin textXlSemibold {
+  /* text-xl/semibold */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 140% */
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+@mixin textLgSemibold {
+  /* text-lg/semibold */
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 155.556% */
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@mixin textXlRegular {
+  /* text-xl/regular */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
+  @media (min-width: 768px) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+@mixin textSmall {
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  @media (min-width: 768px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+@mixin singRowEllipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin text2xLRegular {
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  @media (min-width: 768px) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+@mixin mobileBottomDialog {
+  position: fixed;
+  bottom: var(--pFooter-height);
+  left: 0;
+  width: 100vw;
+  height: 500px;
+  overflow: hidden;
+  padding: var(--spacing-23);
+  border-radius: var(--radius-main, 20px) var(--radius-main, 20px) 0px 0px;
+  border: 1px solid var(--outline-primary, rgba(255, 255, 255, 0.1));
+  background: var(--bg-new, #0b0b0f);
+
+  /* Shadows/shadow-md */
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@mixin BodyBody100 {
+  /* Body/Body 100 */
+  font-family: "IBM Plex Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: 0.16px;
+}
+
+@mixin BlackBtn {
+  border-radius: 12px;
+  background: var(--bg-new, #0b0b0f);
+  padding: 4px 10px;
+  color: var(--text-sec, rgba(255, 255, 255, 0.7));
+  @include textXsRegular;
+  cursor: pointer;
+  &:hover {
+    color: var(--text-tertiary, rgba(255, 255, 255, 0.45));
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0.05) 100%
+      ),
+      var(--bg-new, #0b0b0f);
+  }
+}
+
+@mixin maxLen($maxWidth) {
+  max-width: $maxWidth;
+  display: inline-block;
+  @include singRowEllipsis;
+}

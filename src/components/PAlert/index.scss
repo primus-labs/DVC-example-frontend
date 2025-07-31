@@ -1,0 +1,74 @@
+@import "@styles/mixins.scss";
+@import "@styles/flex";
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.pAlert {
+  --circle-radius: 212px;
+  width: 280px;
+  @include frsc;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+
+  .alertWrapper {
+    width: 100%;
+    padding: 12px;
+    @include frsc;
+    gap: 16px;
+    .iconWrapper {
+      @include frcc;
+      .iconfont {
+        font-size: 24px;
+      }
+    }
+    .txtWrapper {
+      width: 216px;
+      @include fcss;
+      gap: 4px;
+      .pAlertTit {
+        color: #161616;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px; /* 125% */
+
+        &.middleTit {
+          line-height: 24px;
+        }
+      }
+      .pAlertDesc {
+        color: #6f6f6f;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 142.857% */
+      }
+    }
+  }
+
+  &.suc {
+    background: var(--colors-base-success-50, #e8faf0);
+    .iconWrapper {
+      .iconfont {
+        color: #17c964;
+      }
+    }
+  }
+  &.error {
+    background: var(--colors-base-danger-50, #fee7ef);
+    .iconWrapper {
+      .iconfont {
+        color: #F31260;
+      }
+    }
+  }
+}
