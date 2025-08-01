@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { primusProofTest } from "./testprimus";
 import { targetTemplateID } from "./config/constants";
+import { callProveTask } from "./api/proving";
 import PTag from "./components/PTag";
 import OperationBar from "./components/Home/OperationBar";
 import VerifyResCard from "./components/Home/VerifyResCard";
@@ -10,6 +11,8 @@ import "./App.scss";
 
 function App() {
   const [attestation, setAttestation] = useState(undefined);
+  const [completeHttpResponseCiphertext, setCompleteHttpResponseCiphertext] =
+    useState(undefined);
   const [attestationMsg, setAttestationMsg] = useState<any>();
   // {
   //   type: "error",
@@ -24,8 +27,10 @@ function App() {
   };
   const onClickVerify = useCallback(async () => {
     try {
-      const att = await primusProofTest(targetTemplateID);
-      setAttestation(att);
+      const res = await primusProofTest(targetTemplateID);
+      setAttestation(res.attestation);
+      debugger
+      setCompleteHttpResponseCiphertext(res.completeHttpResponseCiphertext);
       setAttestationMsgFn({
         type: "suc",
         title: "Data verified",
@@ -38,7 +43,21 @@ function App() {
       });
     }
   }, []);
-  const onClickStart = useCallback(() => {}, []);
+  const onClickStart = useCallback(async () => {
+    try {
+      const params = {
+        public_data: attestation,
+        private_data: {
+          aes_key: completeHttpResponseCiphertext?.packets[0].aes_key,
+        },
+      };
+      const taskId = await callProveTask([JSON.stringify(params)]);
+      console.log("Task ID:", taskId);
+    } catch (err) {
+      debugger;
+      console.error("Error:", err);
+    }
+  }, [attestation, completeHttpResponseCiphertext]);
   return (
     <div className="app">
       <div className="appContent">
@@ -59,7 +78,7 @@ function App() {
             <OperationBar
               icon={icocOperation}
               title="Privacy-preserving Computation"
-              subTitle="Compute the total trade amount, and verify whether it exceeds 1000 USD using zkVM."
+              subTitle="Compute the total trade amount, and verify whether it exceeds 100 USD using zkVM."
               operateText="Start"
               onOperate={onClickStart}
             />

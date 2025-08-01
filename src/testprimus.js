@@ -32,7 +32,10 @@ export async function primusProofTest(attTemplateID) {
 
   if (attTemplateID === targetTemplateID) {
     request.setComputeMode("nonecomplete");
-    const additionParams = JSON.stringify({ binanceBaseAsset: "BNB" });
+    const additionParams = JSON.stringify({
+      binanceBaseAsset: "BNB",
+      rowForBrevis: 10,
+    });
     request.setAdditionParams(additionParams);
   }
 
@@ -58,60 +61,63 @@ export async function primusProofTest(attTemplateID) {
     completeHttpResponseCiphertext = JSON.parse(
       extendedData.CompleteHttpResponseCiphertext
     );
-    console.log("completeHttpResponseCiphertext=", completeHttpResponseCiphertext); 
+    console.log(
+      "completeHttpResponseCiphertext=",
+      completeHttpResponseCiphertext
+    );
   }
-  return attestation;
+  return { attestation, completeHttpResponseCiphertext };
 
   //verify siganture TODO
   // const verifyResult = await primusZKTLS.verifyAttestation(attestation);
   // console.log("verifyResult=", verifyResult);
 
-//   if (verifyResult === true && attTemplateID === targetTemplateID) {
-//     const zkVmRequestData = {
-//       attestationData: {
-//         public_data: attestation,
-//         private_data: {
-//           aes_key: completeHttpResponseCiphertext.packets[0].aes_key,
-//         },
-//       },
-//       requestid: request.requestid,
-//     };
-//     console.log("zkVmRequestData=", zkVmRequestData);
+  //   if (verifyResult === true && attTemplateID === targetTemplateID) {
+  //     const zkVmRequestData = {
+  //       attestationData: {
+  //         public_data: attestation,
+  //         private_data: {
+  //           aes_key: completeHttpResponseCiphertext.packets[0].aes_key,
+  //         },
+  //       },
+  //       requestid: request.requestid,
+  //     };
+  //     console.log("zkVmRequestData=", zkVmRequestData);
 
-//     //   const zkVMServerUrl = "http://35.198.243.131:38080/";
-//     try {
-//       const sendZkVmRes = await postJson("/zktls/prove", zkVmRequestData);
-//       console.log("sendZkVmRes=", sendZkVmRes);
-//       if (sendZkVmRes.code !== "0") {
-//         return;
-//       }
-//     } catch (error) {
-//       console.log("send request error.");
-//     }
+  //     //   const zkVMServerUrl = "http://35.198.243.131:38080/";
+  //     try {
+  //       const sendZkVmRes = await postJson("/zktls/prove", zkVmRequestData);
+  //       console.log("sendZkVmRes=", sendZkVmRes);
+  //       if (sendZkVmRes.code !== "0") {
+  //         return;
+  //       }
+  //     } catch (error) {
+  //       console.log("send request error.");
+  //     }
 
-//     const timer = setInterval(async () => {
-//       try {
-//         const getZkVmRes = await postJson("/zktls/result", {
-//           requestid: request.requestid,
-//         });
-//         console.log("getZkVmRes=", getZkVmRes);
-//         if (
-//           getZkVmRes.code === "0" &&
-//           (getZkVmRes.details.status === "done" ||
-//             getZkVmRes.details.status === "error")
-//         ) {
-//           clearInterval(timer);
-//           if (getZkVmRes.details.status === "done") {
-//             const pv_file = getZkVmRes.details.pv_file;
-//             console.log("pv_file=", pv_file);
-//           }
-//         }
-//       } catch (error) {
-//         console.log("query result error.");
-//       }
-//     }, 5000);
-//   } else {
-//   }
+  //     const timer = setInterval(async () => {
+  //       try {
+  //         const getZkVmRes = await postJson("/zktls/result", {
+  //           requestid: request.requestid,
+  //         });
+  //         console.log("getZkVmRes=", getZkVmRes);
+  //         if (
+  //           getZkVmRes.code === "0" &&
+  //           (getZkVmRes.details.status === "done" ||
+  //             getZkVmRes.details.status === "error")
+  //         ) {
+  //           clearInterval(timer);
+  //           if (getZkVmRes.details.status === "done") {
+  //             const pv_file = getZkVmRes.details.pv_file;
+  //             console.log("pv_file=", pv_file);
+  //           }
+  //         }
+  //       } catch (error) {
+  //         console.log("query result error.");
+  //       }
+  //     }, 5000);
+  //   } else {
+  //   }
 }
 
 async function postJson(url, data, headers = {}) {
