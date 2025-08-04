@@ -1,0 +1,12 @@
+@import "@styles/mixins.scss";
+.spinnerWrapper {
+  .loading-spinner {
+    @include pSpiner(
+      14px,
+      14px,
+      2px,
+      var(--icon-tokens-icon-primary, #161616),
+      var(--layer-tokens-layer-primary, #fff)
+    );
+  }
+}

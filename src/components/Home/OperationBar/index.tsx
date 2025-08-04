@@ -1,17 +1,18 @@
 import React, { memo } from "react";
+import PLoading from "@/components/PLoading";
+import iconDone from "@/assets/images/home/done.svg";
 import "./index.scss";
-import PButton from "@components/PButton";
 
 interface OperationBarProps {
   icon: any;
   title: string;
   subTitle: string;
-  operateText: string;
-  onOperate: () => void;
+  done: boolean;
+  loading: boolean;
 }
 
 const OperationBar: React.FC<OperationBarProps> = memo(
-  ({ icon, title, subTitle, operateText, onOperate }) => {
+  ({ icon, title, subTitle, done, loading }) => {
     return (
       <div className={`operationBar`}>
         <div className="operationIntro">
@@ -21,7 +22,14 @@ const OperationBar: React.FC<OperationBarProps> = memo(
             <h4>{subTitle}</h4>
           </div>
         </div>
-        <PButton onClick={onOperate} text={operateText} className="operationBtn" />
+        {done ? (
+          <img src={iconDone} alt="" />
+        ) : loading ? (
+          <PLoading />
+        ) : (
+          <></>
+        )}
+        {/* <PButton onClick={onOperate} text={operateText} className="operationBtn" /> */}
       </div>
     );
   }

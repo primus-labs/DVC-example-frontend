@@ -20,6 +20,19 @@
           font-weight: 500;
           line-height: 140%; /* 67.2px */
         }
+        .startBtn {
+          width: 160px;
+          height: 48px;
+          margin-top: 12px;
+          .btnText {
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 18px; /* 112.5% */
+            letter-spacing: 0.16px;
+          }
+        }
       }
       .operationBlock {
         width: 100%;
@@ -31,12 +44,17 @@
           gap: 16px;
         }
       }
+
       .resultBlock {
         width: 100%;
         @include fcss;
         gap: 12px;
+        .resultList {
+          @include frss;
+          gap: 12px;
+        }
       }
-      .pAlert{
+      .pAlert {
         position: fixed;
         bottom: 80px;
         right: 120px;

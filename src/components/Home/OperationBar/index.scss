@@ -1,9 +1,10 @@
 @import "@styles/flex";
+@import "@styles/mixins.scss";
 .operationBar {
   border-radius: var(--Radius-radius-xs, 4px);
   border: 1px solid var(--Border-Tokens-border--primary, #e0e0e0);
   background: var(--Layer-Tokens-layer-primary, #fff);
-  padding: 23px 19px;
+  padding: 23px 39px 23px 19px;
   width: 100%;
   @include frbc;
   .operationIntro {
@@ -34,6 +35,20 @@
         letter-spacing: 0.16px;
       }
     }
+  }
+  .spinnerWrapper {
+    .loading-spinner {
+      @include pSpiner(
+        23px,
+        23px,
+        2px,
+        rgba(255, 77, 0, 0.8),
+        var(--layer-tokens-layer-primary, #fff)
+      );
+    }
+  }
+  > img {
+    width: 24px;
   }
   .operationBtn {
     width: 72px !important;
