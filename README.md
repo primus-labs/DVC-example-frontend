@@ -4,7 +4,7 @@ This demo verifies if a user’s **“BNB Spot Trade History Volume”** on Bina
 
 **Demo Link:** http://api-dev.primuslabs.xyz:38095/
 
-Please note that for simplicity and performance, this demo only processes the 20 most recent trade records within the last 30-day period. The total volume is calculated based on these 10 records alone.
+Please note that for simplicity and performance, this demo only processes the 10 most recent trade records within the last 30-day period. The total volume is calculated based on these 10 records alone.
 
 ### Prerequisites
 
