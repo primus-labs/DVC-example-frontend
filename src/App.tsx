@@ -1,5 +1,5 @@
 import { useState, useCallback, useMemo, useEffect } from "react";
-import { primusProofTest } from "./testprimus";
+import { primusProofTest } from "./testprimus.js";
 import { targetTemplateID } from "./config/constants";
 import { callProveTask } from "./api/proving";
 import PTag from "./components/PTag";
@@ -40,9 +40,11 @@ function App() {
     try {
       setAttestLoading(true);
       setAttestation(undefined);
+      setTaskId("");
       const res = await primusProofTest(targetTemplateID);
       setAttestation(res.attestation);
       setCompleteHttpResponseCiphertext(res.completeHttpResponseCiphertext);
+
       setAttestationMsgFn({
         type: "suc",
         title: "Data verified",
@@ -65,7 +67,6 @@ function App() {
           aes_key: completeHttpResponseCiphertext?.packets[0].aes_key,
         },
       };
-      
       console.log("callProveTask params", JSON.stringify(params));
       setComputeLoading(true);
       setTaskId("");
@@ -137,11 +138,14 @@ function App() {
               <h3>Verified Result</h3>
               <div className="resultList">
                 {attestation && (
-                  <VerifyResCardBlock attestation={attestation} />
+                  <VerifyResCardBlock
+                    attestation={attestation}
+                    aesKey={completeHttpResponseCiphertext?.packets[0].aes_key}
+                  />
                 )}
                 {taskId && (
                   <ComputeResCardBlock
-                    attestation={`https://pico-proofs.s3.us-west-2.amazonaws.com/task-${taskId}/proof.bin`}
+                    result={`https://pico-proofs.s3.us-west-2.amazonaws.com/task-${taskId}/proof.bin`}
                   />
                 )}
               </div>

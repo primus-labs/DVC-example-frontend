@@ -13,6 +13,7 @@
   "dependencies": {
     "@connectrpc/connect": "^2.0.3",
     "@connectrpc/connect-web": "^2.0.3",
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@grpc/grpc-js": "^1.13.4",
     "@grpc/proto-loader": "^0.8.0",
     "@primuslabs/zktls-js-sdk": "^0.3.3",
@@ -20,11 +21,14 @@
     "@protobuf-ts/runtime": "^2.11.1",
     "@protobuf-ts/runtime-rpc": "^2.11.1",
     "autoprefixer": "^10.4.21",
+    "buffer": "^6.0.3",
+    "crypto-js": "^4.2.0",
     "dayjs": "^1.11.13",
     "google-protobuf": "^3.21.4",
     "grpc-web": "^1.5.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "rollup-plugin-node-polyfills": "^0.2.1",
     "sass": "^1.89.2"
   },
   "devDependencies": {

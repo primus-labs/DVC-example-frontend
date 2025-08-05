@@ -1,7 +1,7 @@
 import React, { memo, useState } from "react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
-import iconBinance from "@images/home/binance.svg";
+
 import iconClock from "@images/home/clock.svg";
 // import iconRecords from "@images/home/records.svg";
 import "./index.scss";
@@ -11,13 +11,14 @@ interface VerifyResCardProps {
   onClick?: () => void;
   title: string;
   timestamp: number;
+  icon: any;
 }
 
 const VerifyResCard: React.FC<VerifyResCardProps> = memo(
-  ({ onClick, title, timestamp }) => {
+  ({ onClick, title, timestamp, icon }) => {
     return (
       <div className={`verifyResCard`} onClick={onClick}>
-        <img src={iconBinance} alt="" />
+        <img src={icon} alt="" />
         <div className="verifyResIntro">
           <div className="title">{title}</div>
           <div className="descItems">
