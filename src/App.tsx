@@ -71,13 +71,14 @@ function App() {
       setComputeLoading(true);
       setTaskId("");
       const taskId = await callProveTask([JSON.stringify(params)]);
-
-      console.log("Task ID:", taskId);
-      setTaskId(taskId);
-      setAttestationMsgFn({
-        type: "suc",
-        title: "Computation completed",
-      });
+      setTimeout(() => {
+        console.log("Task ID:", taskId);
+        setTaskId(taskId);
+        setAttestationMsgFn({
+          type: "suc",
+          title: "Computation completed",
+        });
+      }, 5000);
     } catch (err) {
       console.error("Error:", err);
       setAttestationMsgFn({
