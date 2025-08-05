@@ -6,7 +6,7 @@ This demo verifies if a user’s **“BNB Spot Trade History Volume”** on Bina
 
 ### Prerequisites
 
-•	You must instal the appropriate test version of the browser extension. Two verisions are available for this demo: **Kaito Edition** and **Buidlpad Edition**.
+•	You must install the appropriate test version of the browser extension. Two versions are available for this demo: **Kaito Edition** and **Buidlpad Edition**.
 
 •	⚠️ **Important:** Only one extension can be enabled at a time. Whether it’s the Kaito Edition, Buidlpad Edition, or the native Primus extension, please ensure only one is active in your Chrome Extension Management settings. Enabling multiple versions simultaneously may cause conflicts and lead to incorrect verification results.
 
@@ -16,7 +16,7 @@ After installing and enabling only the required extension in the Chrome browser,
 
 - **Step 1:**	The demo will open a Binance page and trigger the extension to verify the user’s BNB spot trade history over the last 30 days. Once the verification is complete, the Binance tab will close automatically, and you will be returned to the demo page.
 
-- **Step 2:**	The encrypted verificaiton result will be sent to the zkVM for privacy-preserving computation. The zkVM will calculate the total trading volume and compare it against 100 USD to determine whether the condition “greater than 100 USD” is met. The result will then be returned to the demo page.
+- **Step 2:**	The encrypted verification result will be sent to the zkVM for privacy-preserving computation. The zkVM will calculate the total trading volume and compare it against 100 USD to determine whether the condition “greater than 100 USD” is met. The result will then be returned to the demo page.
 
 ### Additional Notes
 
