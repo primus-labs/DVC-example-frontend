@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
 import rollupNodePolyFill from "rollup-plugin-node-polyfills";
+import inject from "@rollup/plugin-inject";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
@@ -30,8 +31,26 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      // @ts-ignore
-      plugins: [rollupNodePolyFill()],
+      plugins: [
+        // @ts-ignore
+        rollupNodePolyFill(),
+        inject({
+          process: "process/browser",
+        }),
+      ],
+      manualChunks: {
+        vendor: [
+          "react",
+          "react-dom",
+          "sass",
+          "@primuslabs/zktls-js-sdk",
+          "autoprefixer",
+          "dayjs",
+        ],
+      },
     },
+  },
+  define: {
+    "process.env": process.env || {},
   },
 });
