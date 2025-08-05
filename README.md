@@ -2,13 +2,13 @@
 
 This demo verifies if a user’s **“BNB Spot Trade History Volume”** on Binance over the last 30 days is **"greater than 100 USD"**. 
 
-**Demo Link:** link to be added.
+**Demo Link:** http://api-dev.primuslabs.xyz:38095/
 
-Please note that for simplicity and performance, this demo only processes the 20 most recent trade records within the last 30-day period. The total volume is calculated based on these 20 records alone.
+Please note that for simplicity and performance, this demo only processes the 20 most recent trade records within the last 30-day period. The total volume is calculated based on these 10 records alone.
 
 ### Prerequisites
 
-•	You must install the appropriate test version of the browser extension. Two versions are available for this demo: **Kaito Edition** and **Buidlpad Edition**.
+•	You must install the appropriate test version of the browser extension. Two versions are available for this demo: **[Kaito Edition](https://github.com/primus-labs/DVC-example-frontend/blob/main/extensions/Kaito.zip)** and **[Buidlpad Edition](https://github.com/primus-labs/DVC-example-frontend/blob/main/extensions/Buidlpad.zip)**.
 
 •	⚠️ **Important:** Only one extension can be enabled at a time. Whether it’s the Kaito Edition, Buidlpad Edition, or the native Primus extension, please ensure only one is active in your Chrome Extension Management settings. Enabling multiple versions simultaneously may cause conflicts and lead to incorrect verification results.
 
