@@ -10,7 +10,7 @@ Please note that for simplicity and performance, this demo only processes the 10
 
 •	You must install the appropriate test version of the browser extension. Two versions are available for this demo: **[Kaito Edition](https://github.com/primus-labs/DVC-example-frontend/blob/main/extensions/Kaito.zip)** and **[Buidlpad Edition](https://github.com/primus-labs/DVC-example-frontend/blob/main/extensions/Buidlpad.zip)**.
 
-⚠️ **Important:** Only one extension can be enabled at a time. Whether it’s the Kaito Edition, Buidlpad Edition, or the native Primus extension, please ensure only one is active in your Chrome Extension Management settings. Enabling multiple versions simultaneously may cause conflicts and lead to incorrect verification results.
+•	⚠️ **Important:** Only one extension can be enabled at a time. Whether it’s the Kaito Edition, Buidlpad Edition, or the native Primus extension, please ensure only one is active in your Chrome Extension Management settings. Enabling multiple versions simultaneously may cause conflicts and lead to incorrect verification results.
 
 •	If you need to switch to another extension, remember to refresh the demo page before initiating a new process.
 
