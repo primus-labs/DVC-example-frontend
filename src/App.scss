@@ -20,6 +20,15 @@
           font-weight: 500;
           line-height: 140%; /* 67.2px */
         }
+        > p {
+          color: var(--Black-100, #101010);
+          font-family: Inter;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%; /* 22.4px */
+          opacity: 0.6;
+        }
         .startBtn {
           width: 160px;
           height: 48px;
@@ -38,6 +47,14 @@
         width: 100%;
         @include fcss;
         gap: 12px;
+        > h3 {
+          color: var(--Text-Tokens-text-primary, #161616);
+          font-family: Inter;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 22px; /* 137.5% */
+        }
         .operationList {
           width: 100%;
           @include fcss;
