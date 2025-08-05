@@ -226,7 +226,6 @@ export const decodeCryptoAttestation = async (attestation, aesKey) => {
   );
   const fullPlainResponse = await tlsData.getFullPlainResponse(aesKey);
   console.log("fullPlainResponse=", fullPlainResponse);
-  debugger;
   const bodyStart = fullPlainResponse[0].indexOf("\r\n\r\n") + 4;
   const jsonStr = fullPlainResponse[0].substring(bodyStart);
 

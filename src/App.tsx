@@ -78,6 +78,7 @@ function App() {
           type: "suc",
           title: "Computation completed",
         });
+        setComputeLoading(false);
       }, 5000);
     } catch (err) {
       console.error("Error:", err);
@@ -85,8 +86,8 @@ function App() {
         type: "error",
         title: "Computation failed",
       });
-    } finally {
       setComputeLoading(false);
+    } finally {
     }
   }, [attestation, completeHttpResponseCiphertext]);
   const onStart = useCallback(async () => {
