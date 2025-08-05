@@ -37,7 +37,7 @@ export async function primusProofTest(attTemplateID) {
     request.setComputeMode("nonecomplete");
     const additionParams = JSON.stringify({
       binanceBaseAsset: "BNB",
-      rowForBrevis: 20,
+      binanceRows: 10,
     });
     request.setAdditionParams(additionParams);
   }
