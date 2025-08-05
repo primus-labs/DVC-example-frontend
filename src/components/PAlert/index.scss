@@ -16,11 +16,16 @@
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-
+  &.short {
+    .alertWrapper {
+      @include frsc;
+    }
+  }
   .alertWrapper {
     width: 100%;
     padding: 12px;
-    @include frsc;
+    padding-right: 24px;
+    @include frss;
     gap: 16px;
     .iconWrapper {
       @include frcc;
@@ -67,7 +72,7 @@
     background: var(--colors-base-danger-50, #fee7ef);
     .iconWrapper {
       .iconfont {
-        color: #F31260;
+        color: #f31260;
       }
     }
   }

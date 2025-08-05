@@ -66,6 +66,14 @@
         width: 100%;
         @include fcss;
         gap: 12px;
+        > h3 {
+          color: var(--Text-Tokens-text-primary, #161616);
+          font-family: Inter;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 22px; /* 137.5% */
+        }
         .resultList {
           @include frss;
           gap: 12px;
