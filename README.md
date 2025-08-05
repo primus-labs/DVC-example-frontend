@@ -1,8 +1,10 @@
 # Demo Workflow & Guidelines
 
-This demo verifies if a user’s **“BNB Spot Trade History Volume”** on Binance over the last 30 days is **"greater than 100 USD"**.
+This demo verifies if a user’s **“BNB Spot Trade History Volume”** on Binance over the last 30 days is **"greater than 100 USD"**. 
 
 **Demo Link:** link to be added.
+
+Please note that for simplicity and performance, this demo only processes the 20 most recent trade records within the last 30-day period. The total volume is calculated based on these 20 records alone.
 
 ### Prerequisites
 
