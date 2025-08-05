@@ -64,7 +64,7 @@ function App() {
       const params = {
         public_data: attestation,
         private_data: {
-          aes_key: completeHttpResponseCiphertext?.packets[0].aes_key,
+          aes_key: (completeHttpResponseCiphertext as any)?.packets[0].aes_key,
         },
       };
       console.log("callProveTask params", JSON.stringify(params));
@@ -126,7 +126,7 @@ function App() {
             <OperationBar
               icon={icocOperation}
               title="Privacy-preserving Computation"
-              subTitle="Compute the total trade amount, and verify whether it exceeds 100 USD using zkVM."
+              subTitle="Compute the total trade volume, and verify whether it exceeds 100 USD using zkVM."
               done={!!taskId}
               loading={computeLoading}
             />
@@ -140,7 +140,10 @@ function App() {
                 {attestation && (
                   <VerifyResCardBlock
                     attestation={attestation}
-                    aesKey={completeHttpResponseCiphertext?.packets[0].aes_key}
+                    aesKey={
+                      (completeHttpResponseCiphertext as any)?.packets[0]
+                        .aes_key
+                    }
                   />
                 )}
                 {taskId && (

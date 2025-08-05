@@ -25,6 +25,7 @@ export class ProvingNetworkClient implements IProvingNetworkClient, ServiceInfo 
     typeName = ProvingNetwork.typeName;
     methods = ProvingNetwork.methods;
     options = ProvingNetwork.options;
+    // @ts-ignore
     constructor(private readonly _transport: RpcTransport) {
     }
     /**

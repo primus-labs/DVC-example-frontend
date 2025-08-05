@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import PButton from "@components/PButton";
+import PButton from "../PButton";
 import "./index.scss";
 interface PBackProps {
   onClick: () => void;

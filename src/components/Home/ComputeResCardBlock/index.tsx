@@ -1,7 +1,6 @@
-import React, { memo, useState } from "react";
+import React, { memo } from "react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
-import AttestationDialog from "../VerifyResCardBlock/AttestationDialog";
 import VerifyResCard from "../VerifyResCardBlock/VerifyResCard";
 import iconBrevis from "@images/home/brevis.png";
 import "./index.scss";

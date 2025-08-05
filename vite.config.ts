@@ -12,6 +12,7 @@ export default defineConfig({
       "@images": "/src/assets/images",
       "@components": "/src/components",
       "@config": "/src/config",
+      "@utils": "/src/utils",
       buffer: "buffer",
     },
   },
@@ -29,6 +30,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
+      // @ts-ignore
       plugins: [rollupNodePolyFill()],
     },
   },
