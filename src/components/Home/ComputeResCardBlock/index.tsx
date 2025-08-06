@@ -1,9 +1,10 @@
-import React, { memo } from "react";
+import React, { memo, useEffect, useState } from "react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import VerifyResCard from "../VerifyResCardBlock/VerifyResCard";
 import iconBrevis from "@images/home/brevis.png";
 import "./index.scss";
+import AttestationDialog from "./AttestationDialog";
 dayjs.extend(utc);
 
 interface VerifyResCardProps {
@@ -11,9 +12,24 @@ interface VerifyResCardProps {
 }
 
 const VerifyResCardBlock: React.FC<VerifyResCardProps> = memo(({ result }) => {
+  const [metaJson, setMetaJson] = useState<any>()
+  const [resDialogVisible, setResDialogVisible] = useState(false);
   const onShowVerifyResDialog = () => {
-    window.open(result);
+    setResDialogVisible((f) => !f);
   };
+  const onCloseVerifyResDialog = () => {
+    setResDialogVisible(false);
+  };
+  
+  useEffect(() => {
+    console.log("metajson result=", result);
+    fetch(`https://pico-proofs.s3.us-west-2.amazonaws.com/task-${result}/metadata.json`).
+    then((resultContent) => {
+      console.log("resultContent=", resultContent);
+      setMetaJson(resultContent);
+    });
+  }, []);
+
   return (
     <>
       <VerifyResCard
@@ -22,6 +38,13 @@ const VerifyResCardBlock: React.FC<VerifyResCardProps> = memo(({ result }) => {
         timestamp={+new Date()}
         icon={iconBrevis}
       />
+      {resDialogVisible && (
+        <AttestationDialog
+          attestation={metaJson}
+          aesKey={result}
+          onClose={onCloseVerifyResDialog}
+        />
+      )}
     </>
   );
 });

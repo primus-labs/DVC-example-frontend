@@ -1,4 +1,4 @@
-import PCopy from "@components/PCopy";
+// import PCopy from "@components/PCopy";
 import "./index.scss";
 
 interface PJsonProps {
@@ -8,7 +8,7 @@ interface PJsonProps {
 const PJson: React.FC<PJsonProps> = ({ data: jsonData }) => {
   return (
     <div className="pJson">
-      <PCopy text={JSON.stringify(jsonData, null, 2)} />
+      {/* <PCopy text={JSON.stringify(jsonData, null, 2)} /> */}
       <pre>
         <code className="json">{JSON.stringify(jsonData, null, 2)}</code>
       </pre>

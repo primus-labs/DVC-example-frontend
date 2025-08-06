@@ -1,0 +1,47 @@
+@import "@styles/flex";
+.attestationDialog {
+  @include fcss;
+  gap: 12px;
+  width: 665px;
+  padding: 24px;
+  @include fcss;
+  position: relative;
+  border-radius: var(--Radius-radius-lg, 12px);
+  border: 1px solid var(--Border-default, #e4e4e7);
+  background: var(--Background-default, #fff);
+
+  /* Shadows/sm-strong */
+  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.1),
+    0 1px 3px 0 rgba(16, 24, 40, 0.1);
+  .title {
+    color: var(--Text-Tokens-text-primary, #161616);
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 25.2px */
+  }
+  .pClose {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    button.pButton.icon .iconfont {
+      color: #71717a;
+    }
+    &:hover {
+      button.pButton.icon .iconfont {
+        color: #71717a;
+      }
+    }
+  }
+  .revealBtn{
+    width: 100% !important;
+    height: 36px;
+    margin-top: 12px;
+  }
+  &.compute {
+    .pJson pre {
+      height: 360px;
+    }
+  }
+}

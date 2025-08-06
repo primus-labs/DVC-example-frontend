@@ -150,7 +150,7 @@ function App() {
                 )}
                 {taskId && (
                   <ComputeResCardBlock
-                    result={`https://pico-proofs.s3.us-west-2.amazonaws.com/task-${taskId}/proof.bin`}
+                    result={`${taskId}`}
                   />
                 )}
               </div>
