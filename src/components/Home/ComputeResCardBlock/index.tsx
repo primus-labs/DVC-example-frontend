@@ -23,7 +23,10 @@ const VerifyResCardBlock: React.FC<VerifyResCardProps> = memo(({ result }) => {
   
   useEffect(() => {
     console.log("metajson result=", result);
-    fetch(`https://pico-proofs.s3.us-west-2.amazonaws.com/task-${result}/metadata.json`).
+    fetch(`https://pico-proofs.s3.us-west-2.amazonaws.com/task-${result}/metadata.json`, {
+      method: 'GET',
+      mode: 'cors'
+    }).
     then((resultContent) => {
       console.log("resultContent=", resultContent);
       setMetaJson(resultContent);
