@@ -28,8 +28,11 @@ const VerifyResCardBlock: React.FC<VerifyResCardProps> = memo(({ result }) => {
       mode: 'cors'
     }).
     then((resultContent) => {
-      console.log("resultContent=", resultContent.json());
-      setMetaJson(resultContent.json());
+      return resultContent.json();
+    })
+    .then((data) => {
+      console.log("metadata.json =", data);
+      setMetaJson(data);
     });
   }, []);
 
