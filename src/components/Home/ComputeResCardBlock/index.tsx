@@ -15,7 +15,9 @@ const VerifyResCardBlock: React.FC<VerifyResCardProps> = memo(({ result }) => {
   const [metaJson, setMetaJson] = useState<any>();
   const [resDialogVisible, setResDialogVisible] = useState(false);
   const onShowVerifyResDialog = () => {
-    fetchJsonFn()
+    if (!metaJson) {
+      fetchJsonFn();
+    }
     setResDialogVisible((f) => !f);
   };
   const onCloseVerifyResDialog = () => {
