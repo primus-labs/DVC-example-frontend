@@ -34,7 +34,7 @@ function App() {
     setAttestationMsg(obj);
     setTimeout(() => {
       setAttestationMsg(undefined);
-    }, 5000);
+    }, 8000);
   };
   const onClickVerify = useCallback(async () => {
     try {
